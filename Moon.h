@@ -8,6 +8,6 @@
 class Moon
 {
     public:
-        static void drawMoon(double &initPos);
+        static void drawMoon(double &xPos, double &yPos, double &radius);
         friend void DrawCircle(double r,double cx,double cy);
 };

@@ -20,14 +20,18 @@ void DrawCircle(double r,double cx,double cy)
 }
 
 
-void Moon::drawMoon(double &initPos) {
+void Moon::drawMoon(double &xPos, double &yPos, double &radius) {
     glPushMatrix();
-        glColor3f( 255/255.0 , 255/255.0, 99/255.0);
-        DrawCircle(100.0, -0.3, initPos);
+        DrawCircle(radius, xPos, yPos);
     glPopMatrix();
 
     // Animate 
-    initPos += 0.00001;
-    if(initPos > 1.2)
-        initPos = -1.2;
+    xPos += 0.0001;
+    radius += 0.005;
+    if(xPos > 1.4) {
+        xPos = -1.4;
+        radius = 100.0;
+    }
+
+      yPos = -0.22 * xPos * xPos + 1.2 * xPos;
 }

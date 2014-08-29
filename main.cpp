@@ -1,7 +1,13 @@
 #include "Earth.h"
 #include "Moon.h"
+#include <iostream>
 
-double initPos = -0.8;
+using namespace std;
+
+
+double xPos = -0.8;
+double yPos = -0.3;
+double radius = 100;
 
 void initialize()
 {
@@ -16,7 +22,8 @@ void draw() {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
-	Moon::drawMoon(initPos);
+	Moon::drawMoon(xPos, yPos, radius);
+	cout<<xPos<<" "<<yPos<<endl;
 	Earth::draw();
 
 	glFlush();
