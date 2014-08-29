@@ -171,11 +171,23 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\Constelation.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Earth.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\main.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Moon.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Star.cpp"
 				>
 			</File>
 		</Filter>
@@ -185,7 +197,19 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\Constelation.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Earth.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Moon.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Star.h"
 				>
 			</File>
 		</Filter>
