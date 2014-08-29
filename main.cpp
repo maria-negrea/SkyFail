@@ -26,10 +26,12 @@ void initialize()
 void DrawCircle(double r,double cx,double cy)
 {
 	glBegin(GL_POLYGON);
+		glColor4f( 255/255.0 , 250/255.0, 218/255.0, 0.6);
 		glVertex3f(cx,cy,0.0);
 
 		for(double t = 0; t<PI*2;t+=0.2)
 		{
+			glColor4f( 255/255.0 , 250/255.0, 218/255.0, 0.1);
 			glVertex3f(cx+r/1280.0*cos(t),cy+r/640.0*sin(t),0.0);
 		}
 		glVertex3f(cx+r/1280.0*cos(0.0),cy+r/640.0*sin(0.0),0.0);
@@ -39,9 +41,11 @@ void DrawCircle(double r,double cx,double cy)
 void draw() {
 	// draw moon
 	glClear (GL_COLOR_BUFFER_BIT);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 	glPushMatrix();
-		glColor3f( 255/255.0 , 255/255.0, 99/255.0);
+		glColor3f( 255/255.0 , 250/255.0, 218/255.0);
 		
         /*glTranslated(0.0, 0.0, 0.0);*/
         /*glutSolidSphere( 0.3, 50, 50);*/
