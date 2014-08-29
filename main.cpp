@@ -1,9 +1,10 @@
-#include "Constelation.h"
-#include "Earth.h"
-#include "Moon.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "Constelation.h"
+#include "Earth.h"
+#include "Moon.h"
+
 
 using namespace std;
 
@@ -48,7 +49,8 @@ void initialize()
 void draw() {
 	Moon::drawMoon(xPos, yPos, radius);
 	Earth::draw();
-	Constelation::draw();
+	Constelation cons;
+	cons.draw();
 
 	glFlush();
 	glutPostRedisplay();

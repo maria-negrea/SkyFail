@@ -2,6 +2,11 @@
 
 void Earth::draw()
 {
+	/*vector<Point3D*> ctrlPoints;
+	ctrlPoints.push_back(new Point3D(-0.3, -1, 0.0));
+	ctrlPoints.push_back(new Point3D(0.4, -0.1, 0.0));
+	ctrlPoints.push_back(new Point3D(1.2, -1.0, 0.0));*/
+
 	GLfloat ctrlPoints[3][3] = {
 		{-0.3, -1, 0.0}, {0.4, -0.1, 0.0}, {1.2, -1.0, 0.0} 
 	};
