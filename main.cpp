@@ -50,6 +50,7 @@ void draw() {
 	glPopMatrix();
 	/*glFlush();*/
 	Earth::draw();
+	
 	glFlush();
 }
 
