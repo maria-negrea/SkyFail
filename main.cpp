@@ -1,5 +1,7 @@
+#include "Constelation.h"
 #include "Earth.h"
 #include "Moon.h"
+
 
 double initPos = -0.8;
 
@@ -18,6 +20,7 @@ void draw() {
 	
 	Moon::drawMoon(initPos);
 	Earth::draw();
+	Constelation::draw();
 
 	glFlush();
 	glutPostRedisplay();
@@ -29,6 +32,7 @@ int main(int argc, char **argv)
 	initialize();
 
 	glutDisplayFunc(draw);
+
 	glutMainLoop();
 
 	return 0;
