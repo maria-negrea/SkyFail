@@ -1,9 +1,11 @@
 #include "Constelation.h"
 #include "Earth.h"
 #include "Moon.h"
+#include "Point2D.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
 using namespace std;
 
@@ -12,8 +14,9 @@ double xPos = -0.8;
 double yPos = -0.3;
 double radius = 100;
 
+vector<Point2D<double>> vect;
 
-void drawRandomStars() {
+void generateRandomStars() {
 	srand(time(0));
 	double x, y;
 	glBegin(GL_POINTS);
@@ -24,9 +27,7 @@ void drawRandomStars() {
 			if(x < (-10) || x > 10 || y < (-10) || y > 10) {
 				continue;
 			}
-			glColor3f( 0/255.0 , 0/255.0, 0/255.0);
-			glVertex3f(x, y, 0.0);
-			cout<<x/10.0<<" "<<y/10.0<<endl;
+			Point2D<double> temp(x, y);
 		}
 	}
 	glEnd();
@@ -39,13 +40,13 @@ void initialize()
 	glClearColor(70 / 255.0, 66 / 255.0, 101 / 255.0, 0.0);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
+	generateRandomStars();
+}
+void draw() {
 	glClear (GL_COLOR_BUFFER_BIT);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
-	drawRandomStars();
-}
-void draw() {
 	Moon::drawMoon(xPos, yPos, radius);
 	Earth::draw();
 	Constelation::draw();
