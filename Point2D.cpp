@@ -1,3 +1,5 @@
+
+#pragma once
 #include "Point2D.h"
 
 template<typename C>

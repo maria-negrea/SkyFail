@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void DrawCircle(double r,double cx,double cy, double alpha)
+void Moon::DrawCircle(double r,double cx,double cy, double alpha)
 {
     double const PI = 3.14159;
     double w = 600.0, h = 400.0;
@@ -37,16 +37,16 @@ void Moon::drawMoon(double &xPos, double &yPos, double &radius) {
         for(double i=10.0; i >= 6.0; i = i - 0.1) {
             count ++;
             if(in(count, 30, 40)) {
-                DrawCircle(radius * (i / 10.0), xPos, yPos, 0.25);
+                Moon::DrawCircle(radius * (i / 10.0), xPos, yPos, 0.25);
             } else if(in(count, 20, 30)) {
-                DrawCircle(radius * (i / 10.0), xPos, yPos, 0.2);
+                Moon::DrawCircle(radius * (i / 10.0), xPos, yPos, 0.2);
             } else if(in(count, 10, 20)) {
-                DrawCircle(radius * (i / 10.0), xPos, yPos, 0.15);
+                Moon::DrawCircle(radius * (i / 10.0), xPos, yPos, 0.15);
             } else if(in(count, 0, 10)) {
-                DrawCircle(radius * (i / 10.0), xPos, yPos, 0.1);
+                Moon::DrawCircle(radius * (i / 10.0), xPos, yPos, 0.1);
             }
         }
-        DrawCircle(radius * 0.6, xPos, yPos, 0.6);
+        Moon::DrawCircle(radius * 0.6, xPos, yPos, 0.6);
     glPopMatrix();
 
     // Animate 

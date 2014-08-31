@@ -1,60 +1,24 @@
 #include "Constelation.h"
 #include "Earth.h"
 #include "Moon.h"
-#include "Point2D.h"
+#include "Point2D.cpp"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <vector>
+#include <unistd.h>
 
 using namespace std;
 
-
-double xPos = -0.8;
-double yPos = -0.3;
+double xPos = -1.0;
+double yPos = -1.0;
 double radius = 100;
-
 vector<Point2D<double>> vect;
 
-void generateRandomStars() {
-	srand(time(0));
-	double x, y;
-	glBegin(GL_POINTS);
-	for(double i = -1.0; i < 1.0; i+= 0.1) {
-		for(double j = -1.0; j < 1.0; j+= 0.1) {
-			x = i*10 + (rand() % (int)((i+0.1)*10 - i*10 + 10.0));
-			y = j*10 + (rand() % (int)((j+0.1)*10 - j*10 + 10.0));
-			if(x < (-10) || x > 10 || y < (-10) || y > 10) {
-				continue;
-			}
-			Point2D<double> temp(x, y);
-		}
-	}
-	glEnd();
-}
 
-void initialize()
-{
-	glutInitWindowSize(600,400);
-	glutCreateWindow("Flags");
-	glClearColor(70 / 255.0, 66 / 255.0, 101 / 255.0, 0.0);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	generateRandomStars();
-}
-void draw() {
-	glClear (GL_COLOR_BUFFER_BIT);
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
-	Moon::drawMoon(xPos, yPos, radius);
-	Earth::draw();
-	Constelation cons;
-	cons.draw();
+void initialize();
+void draw();
 
-	glFlush();
-	glutPostRedisplay();
-}
 
 int main(int argc, char **argv)
 {
@@ -66,4 +30,44 @@ int main(int argc, char **argv)
 	glutMainLoop();
 
 	return 0;
+}
+
+/*
+* Initializes Glut and generated random points to populate * vect *
+*/
+
+void initialize()
+{
+	glutInitWindowSize(600,400);
+	glutCreateWindow("Flags");
+	glClearColor(70 / 255.0, 66 / 255.0, 101 / 255.0, 0.0);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	Star::generateRandomStars(vect);
+}
+
+/*
+* The main draw function has: 
+* draw stars (which has positions assigned from *initialize*)
+* drawMoon (with initial coordinates)
+* draw earth and constellation
+*/
+
+void draw() {
+	glClear (GL_COLOR_BUFFER_BIT);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	
+	Moon::drawMoon(xPos, yPos, radius);
+	
+	Constelation cons;
+	cons.draw();
+	
+	Earth::draw();
+	
+	Star::drawRandomStars(vect);
+
+	usleep(2*1000);
+	glFlush();
+	glutPostRedisplay();
 }
