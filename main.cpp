@@ -49,7 +49,8 @@ void draw() {
 	
 	Moon::drawMoon(xPos, yPos, radius);
 	Earth::draw();
-	Constelation::draw();
+	Constelation cons;
+	cons.draw();
 
 	glFlush();
 	glutPostRedisplay();

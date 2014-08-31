@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include "Point3D.h"
 #ifdef __unix || __unix__
  #include <GL/glut.h>
 #else
@@ -11,12 +12,10 @@ using namespace std;
 
 class Star
 {
-	float fX, fY, outerRadius, innerRadius;
+	float outerRadius, innerRadius;	
 public:
 	Star();
-	Star(float fX, float fY, float outerRadius, float innerRadius);
-	float getFX();
-	float getFY();
+	Point3D center;
 	float getOuterRadius();
 	float getInnerRadius();
 	void draw(int r, int g, int b);

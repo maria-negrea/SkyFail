@@ -187,6 +187,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Point3D.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Star.cpp"
 				>
 			</File>
@@ -206,6 +210,10 @@
 			</File>
 			<File
 				RelativePath=".\Moon.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Point3D.h"
 				>
 			</File>
 			<File

@@ -1,6 +1,12 @@
 #pragma once
-#include "Star.h"
 #include<vector>
+#include "Star.h"
+#ifdef __unix || __unix__
+ #include <GL/glut.h>
+#else
+ #include <glut.h>
+#endif
+
 
 using namespace std;
 
@@ -8,7 +14,7 @@ class Constelation
 {
 	
 public:	
-	static const vector<Star> stars;
-	static void initialize(char* fileName);
-	static void draw();
+	vector<Star> stars;
+	void initialize(char* fileName);
+	void draw();
 };

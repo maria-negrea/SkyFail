@@ -1,7 +1,7 @@
-#include "Moon.h"
 #include <math.h>
-
 #include <iostream>
+#include "Moon.h"
+
 
 using namespace std;
 
@@ -31,6 +31,7 @@ inline int in(int x, int min, int max) {
 
 
 void Moon::drawMoon(double &xPos, double &yPos, double &radius) {
+	glClear(GL_COLOR_BUFFER_BIT);
     glPushMatrix();
         int count = 0;
         for(double i=10.0; i >= 6.0; i = i - 0.1) {
