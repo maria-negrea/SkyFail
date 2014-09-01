@@ -76,9 +76,9 @@ void Constelation::draw(double& r, double& g, double& b, double& alfa, bool draw
 	}
 	glPopMatrix();
 	glFlush();
-	r+=0.1;
-	g+=0.1;
-	b+=0.1;
+	r+=0.5;
+	g+=0.5;
+	b+=0.5;
 
 	if(alfa< 1.0)
 	{

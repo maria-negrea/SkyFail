@@ -4,8 +4,8 @@
 
 Star::Star()
 {
-	outerRadius=0.04;
-	innerRadius=0.02;
+	outerRadius=0.03;
+	innerRadius=0.01;
 }
 
 float Star:: getOuterRadius()
@@ -31,8 +31,8 @@ void Star::draw(int r, int g, int b, double alfa)
 	
 	glBegin(GL_TRIANGLE_FAN);
 		
-		glColor4f( r/255.0, g/255.0, b/255.0, 0.5);
-		glVertex3f(center.x, center.y, alfa);
+		glColor4f( r/255.0, g/255.0, b/255.0, alfa*2);
+		glVertex3f(center.x, center.y, 0.0);
 		
 		for (int iVertIndex = 0; iVertIndex < 10; ++iVertIndex) 
 		{
@@ -40,13 +40,13 @@ void Star::draw(int r, int g, int b, double alfa)
 			float fAngleEnd		= fAngleStart + PI/5.0;
 			if (iVertIndex % 2 == 0) 
 			{
-				glColor4f( r/255.0, g/255.0, b/255.0, alfa);
+				glColor4f( r/255.0, g/255.0, b/255.0, alfa*5);
 				glVertex3f(center.x + outerRadius*cos(fAngleStart)/STP, center.y + outerRadius*sin(fAngleStart), 0.0);
 				glVertex3f(center.x + innerRadius*cos(fAngleEnd)/STP, center.y + innerRadius*sin(fAngleEnd), 0.0);
 			} 
 			else 
 			{
-				glColor4f( r/255.0, g/255.0, b/255.0, alfa);
+				glColor4f( r/255.0, g/255.0, b/255.0, alfa*5);
 				glVertex3f(center.x + innerRadius*cos(fAngleStart)/STP, center.y + innerRadius*sin(fAngleStart), 0.0);
 				glVertex3f(center.x + outerRadius*cos(fAngleEnd)/STP, center.y + outerRadius*sin(fAngleEnd), 0.0);
 			}
@@ -102,9 +102,9 @@ void Star::generateRandomStars(vector<Point2D<double>> &vect) {
 * Has *vect* vector as parameter and draws all the points onto the canvas
 * The drawing is done using the DrawCircle method in Moon
 */
-void Star::drawRandomStars(vector<Point2D<double>> vect) {
+void Star::drawRandomStars(vector<Point2D<double>> vect, double alfa) {
 	glColor3f(255/255.0, 255/255.0, 255/255.0);
 	for(int i=0; i < vect.size(); ++i) {
-		Moon::DrawCircle(rand() % 4 + 1, vect[i].getX(), vect[i].getY(), 1.0);
+		Moon::DrawCircle(rand() % 4 + 1, vect[i].getX(), vect[i].getY(), alfa*10);
 	}
 }

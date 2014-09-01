@@ -32,7 +32,7 @@ public:
     float getInnerRadius();
 	void draw(int r, int g, int b, double alfa);
 
-    static void drawRandomStars(vector<Point2D<double>> vect);
+    static void drawRandomStars(vector<Point2D<double>> vect, double alfa);
     static void generateRandomStars(vector<Point2D<double>> &vect);
 	
     ~Star(void);
