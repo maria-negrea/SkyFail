@@ -1,24 +1,20 @@
 #include "Earth.h"
 
-void Earth::draw()
+void Earth::draw(double& r, double& g, double& b)
 {
-	/*vector<Point3D*> ctrlPoints;
-	ctrlPoints.push_back(new Point3D(-0.3, -1, 0.0));
-	ctrlPoints.push_back(new Point3D(0.4, -0.1, 0.0));
-	ctrlPoints.push_back(new Point3D(1.2, -1.0, 0.0));*/
-
 	GLfloat ctrlPoints[3][3] = {
 		{-0.3, -1, 0.0}, {0.4, -0.1, 0.0}, {1.2, -1.0, 0.0} 
 	};
-	/*glClear (GL_COLOR_BUFFER_BIT);*/
+
     glColor3f (1.0, 1.0, 1.0);
+	/*glColor4f( r/255.0 , g/255.0, b/255.0, 1.0);*/
 	glPushMatrix();
 	
    glMap1f(GL_MAP1_VERTEX_3, 0.0, 1.0, 3, 3, &ctrlPoints[0][0]);
    glEnable(GL_MAP1_VERTEX_3);
    int i;
 
-   glColor3f( 145/255.0 , 169/255.0, 99/255.0);
+   glColor4f( r/255.0 , g/255.0, b/255.0, 0.5);
    glBegin(GL_QUADS);
       for (i = 0; i < 30; i++) 
 	  {
@@ -31,4 +27,8 @@ void Earth::draw()
 
    glPopMatrix();
    glFlush();
+
+   r+=0.005;
+   g+=0.005;
+   b+=0.005;
 }

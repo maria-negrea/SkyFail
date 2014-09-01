@@ -12,6 +12,12 @@ using namespace std;
 double xPos = -0.8;
 double yPos = -0.3;
 double radius = 100;
+double rE=145, gE=169, bE=99;
+double rC=70, gC=66, bC=101;
+//int rC=250, gC=250, bC=250;
+
+double rD=70, gD=66, bD=101;
+double alfa=0.0;
 
 
 void drawRandomStars() {
@@ -37,7 +43,7 @@ void initialize()
 {
 	glutInitWindowSize(600,400);
 	glutCreateWindow("Flags");
-	glClearColor(70 / 255.0, 66 / 255.0, 101 / 255.0, 0.0);
+	
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glClear (GL_COLOR_BUFFER_BIT);
@@ -47,11 +53,16 @@ void initialize()
 	drawRandomStars();
 }
 void draw() {
+	glClearColor(rD / 255.0, gD / 255.0, bD / 255.0, 0.0);
 	Moon::drawMoon(xPos, yPos, radius);
-	Earth::draw();
+	
 	Constelation cons;
-	cons.draw();
-
+	cons.draw(rC, gC, bC, alfa);
+	rD-=0.005;
+	gD-=0.005;
+	bD-=0.005;
+	cout<<rD<<" "<<gD<<" "<<bD<<endl;
+	Earth::draw(rE , gE, bE);
 	glFlush();
 	glutPostRedisplay();
 }

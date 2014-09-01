@@ -18,7 +18,7 @@ public:
 	Point3D center;
 	float getOuterRadius();
 	float getInnerRadius();
-	void draw(int r, int g, int b);
+	void draw(int r, int g, int b, double alfa);
 	~Star(void);
 
 	friend istream& operator>>(istream& in, Star& star);

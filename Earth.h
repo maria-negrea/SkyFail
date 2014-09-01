@@ -11,5 +11,5 @@ using namespace std;
 class Earth
 {
 public:
-	static void draw();
+	static void draw(double& r, double& g, double& b);
 };

@@ -15,13 +15,13 @@ void Constelation::initialize(char* fileName)
 
 }
 
-void Constelation::draw()
+void Constelation::draw(double& r, double& g, double& b, double& alfa)
 {
 	initialize("StarsCoordinates.txt");
 	
 
 	glPushMatrix();
-	glColor3f(153/255.0, 162/255.0, 196/255.0);
+	glColor4f(r/255.0, g/255.0, b/255.0, alfa);
 	glBegin(GL_LINE_STRIP);
 		for(int i=0;i<8;i++)
 		{			
@@ -52,12 +52,21 @@ void Constelation::draw()
 
 	glEnd();
 
+	glColor4f(r/255.0, g/255.0, b/255.0, alfa);
 	for(int i=0;i<stars.size();i++)
 	{
-		stars[i].draw(255, 255, 255);
+		stars[i].draw(r, g, b, alfa);
 	}
 	glPopMatrix();
 	glFlush();
+	r+=10;
+	g+=10;
+	b+=10;
+
+	if(alfa< 1.0)
+	{
+		alfa+=0.00005;
+	}
 
 }
 

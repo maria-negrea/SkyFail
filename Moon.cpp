@@ -22,27 +22,35 @@ void DrawCircle(double r,double cx,double cy, double alpha)
     glEnd();
 }
 
-inline int in(int x, int min, int max) {
-    if(x > min && x < max) {
+inline int in(int x, int min, int max) 
+{
+    if(x > min && x < max) 
+	{
         return true;
     }
     return false;
 }
 
 
-void Moon::drawMoon(double &xPos, double &yPos, double &radius) {
+void Moon::drawMoon(double &xPos, double &yPos, double &radius) 
+{
 	glClear(GL_COLOR_BUFFER_BIT);
     glPushMatrix();
         int count = 0;
-        for(double i=10.0; i >= 6.0; i = i - 0.1) {
+        for(double i=10.0; i >= 6.0; i = i - 0.1) 
+		{
             count ++;
-            if(in(count, 30, 40)) {
+            if(in(count, 30, 40)) 
+			{
                 DrawCircle(radius * (i / 10.0), xPos, yPos, 0.25);
-            } else if(in(count, 20, 30)) {
+            } else if(in(count, 20, 30)) 
+			{
                 DrawCircle(radius * (i / 10.0), xPos, yPos, 0.2);
-            } else if(in(count, 10, 20)) {
+            } else if(in(count, 10, 20)) 
+			{
                 DrawCircle(radius * (i / 10.0), xPos, yPos, 0.15);
-            } else if(in(count, 0, 10)) {
+            } else if(in(count, 0, 10)) 
+			{
                 DrawCircle(radius * (i / 10.0), xPos, yPos, 0.1);
             }
         }
@@ -52,7 +60,8 @@ void Moon::drawMoon(double &xPos, double &yPos, double &radius) {
     // Animate 
     xPos += 0.0001;
     radius += 0.005;
-    if(xPos > 1.4) {
+    if(xPos > 1.4) 
+	{
         xPos = -1.4;
         radius = 100.0;
     }
