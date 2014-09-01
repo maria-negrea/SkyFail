@@ -29,8 +29,8 @@ using namespace std;
 double xPos = -1.0;
 double yPos = -1.0;
 double radius = 100;
-double rE=145.0, gE=169.0, bE=99.0;
-double rC=70.0, gC=66.0, bC=101.0;
+double rE=79.0, gE=100.0, bE=60.0;
+double rC=255.0, gC=242.0, bC=151.0;
 
 double rD=70, gD=66, bD=101;
 double alfa=0.0;
@@ -60,7 +60,6 @@ void initialize()
 {
 	glutInitWindowSize(600,400);
 	glutCreateWindow("Flags");
-	
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	Star::generateRandomStars(vect);
@@ -74,6 +73,9 @@ void initialize()
 */
 
 void draw() {
+	 glClear (GL_COLOR_BUFFER_BIT);
+	 glEnable(GL_BLEND);
+	 glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glClearColor(rD / 255.0, gD / 255.0, bD / 255.0, 0.0);
 	
 	Earth::draw(rE , gE, bE);
@@ -83,12 +85,21 @@ void draw() {
 	Earth::draw(rE , gE, bE);
 	
 	Constelation cons;
-	cons.draw(rC, gC, bC, alfa);
+	if(xPos>0.9 && yPos>0.9)
+	{
+		cons.draw(rC, gC, bC, alfa, true);
+	}
+	else
+	{
+		cons.draw(rC, gC, bC, alfa, false);
+	}
+	
 	
 	Earth::draw(rE , gE, bE);
 	
 	Star::drawRandomStars(vect);
 	
+	Earth::draw(rE , gE, bE);
 	Earth::draw(rE , gE, bE);
 	
 	#ifdef __unix || __unix__

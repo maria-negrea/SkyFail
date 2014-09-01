@@ -24,7 +24,7 @@ void Earth::draw(double& r, double& g, double& b)
       glEnable(GL_MAP1_VERTEX_3);
       int i;
 
-      glColor4f( r/255.0 , g/255.0, b/255.0, 0.5);
+      glColor4f( r/255.0 , g/255.0, b/255.0, 1.0);
       glBegin(GL_QUADS);
          for (i = 0; i < 30; i++) 
    	   {

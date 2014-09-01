@@ -18,11 +18,11 @@ void Moon::DrawCircle(double r,double cx,double cy, double alpha)
     double const PI = 3.14159;
     double w = 600.0, h = 400.0;
     glBegin(GL_POLYGON);
-        glColor4f( 255/255.0 , 242/255.0, 151/255.0, alpha/2);
+        glColor4f( 208/255.0 , 193/255.0, 149/255.0, alpha);
         glVertex3f(cx,cy,0.0);
         for(double t = 0; t<PI*2;t+=0.2)
         {   
-            glColor4f( 255/255.0 , 242/255.0, 151/255.0, alpha);
+            glColor4f(252/255.0 , 244/255.0, 226/255.0, alpha);
             glVertex3f(cx+r/w*cos(t),cy+r/h*sin(t),0.0);
         }
         glVertex3f(cx+r/w*cos(0.0),cy+r/h*sin(0.0),0.0);
@@ -66,7 +66,7 @@ void Moon::drawMoon(double &xPos, double &yPos, double &radius)
                 DrawCircle(radius * (i / 10.0), xPos, yPos, 0.1);
             }
         }
-        Moon::DrawCircle(radius * 0.6, xPos, yPos, 0.2);
+        Moon::DrawCircle(radius * 0.6, xPos, yPos, 0.0);
     glPopMatrix();
 
     // Animate 
