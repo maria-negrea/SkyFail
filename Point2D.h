@@ -12,6 +12,9 @@ class Point2D {
         */
         C y;
     public:
+        /*!
+        * Implicit Constructor taking the two coordinates as parameters 
+        */
         Point2D(C X, C Y) {
             this->x = X;
             this->y = Y;

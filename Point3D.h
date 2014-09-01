@@ -2,8 +2,19 @@
 
 class Point3D 
 {	 
-public:	
-	double x, y, z;   
+public:
+    /*!
+        * Value for coordinate on the OX axis 
+        */
+	double x;
+    /*!
+        * Value for coordinate on the OY axis 
+        */
+    double y;
+    /*!
+        * Value for coordinate on the OZ axis 
+        */
+    double z;
     Point3D();
     ~Point3D();
 };
