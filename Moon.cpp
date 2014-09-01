@@ -5,8 +5,15 @@
 
 using namespace std;
 
+/*
+* Draws one circle with radius *r*, center point having coordinates *cx*, *cy*
+* and the alpha for points
 
-void DrawCircle(double r,double cx,double cy, double alpha)
+* The circle is drawn using a number of polygons, all having one points in the center (cx, cy)
+
+
+*/
+void Moon::DrawCircle(double r,double cx,double cy, double alpha)
 {
     double const PI = 3.14159;
     double w = 600.0, h = 400.0;
@@ -31,7 +38,9 @@ inline int in(int x, int min, int max)
     return false;
 }
 
-
+/*
+* Draws the moon using circles with the same center
+*/
 void Moon::drawMoon(double &xPos, double &yPos, double &radius) 
 {
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -54,11 +63,11 @@ void Moon::drawMoon(double &xPos, double &yPos, double &radius)
                 DrawCircle(radius * (i / 10.0), xPos, yPos, 0.1);
             }
         }
-        DrawCircle(radius * 0.6, xPos, yPos, 0.6);
+        Moon::DrawCircle(radius * 0.6, xPos, yPos, 0.6);
     glPopMatrix();
 
     // Animate 
-    xPos += 0.0001;
+    xPos += 0.001;
     radius += 0.005;
     if(xPos > 1.4) 
 	{

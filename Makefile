@@ -1,5 +1,5 @@
 all():
 	clear
-	g++ -Wall *.h *.cpp -lncurses -Wsign-compare -std=c++0x -lGL -lGLU -lglut
+	g++ *.h *.cpp -lncurses -Wsign-compare -std=c++0x -lGL -lGLU -lglut -w
 	clear
 	./a.out
