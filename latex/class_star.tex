@@ -1,0 +1,101 @@
+\hypertarget{class_star}{\section{Star Class Reference}
+\label{class_star}\index{Star@{Star}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_star_a3270c6370a58a3cd1b3f208772928fd4}{get\+Outer\+Radius} ()
+\item 
+float \hyperlink{class_star_a7589c551056483d088f0c8e2ae56f182}{get\+Inner\+Radius} ()
+\item 
+void \hyperlink{class_star_a5b5a633e1411e3ba772a583d13455a77}{draw} (int r, int g, int b, double alfa)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_star_a5e8cf08bf8519faf9c6fe29db77c5b95}{draw\+Random\+Stars} (vector$<$ \hyperlink{class_point2_d}{Point2\+D}$<$ double $>$$>$ vect, double alfa)
+\item 
+static void \hyperlink{class_star_a5a45a1a26f35e13f54ca52baf64f6970}{generate\+Random\+Stars} (vector$<$ \hyperlink{class_point2_d}{Point2\+D}$<$ double $>$$>$ \&vect)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_point3_d}{Point3\+D} \hyperlink{class_star_a56595bbf2da9c7b2de04be76f61d2e93}{center}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \hyperlink{class_star_ad3471c4d5d15b774543031939eda0f5d}{operator$>$$>$} (istream \&in, \hyperlink{class_star}{Star} \&star)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_star_a5b5a633e1411e3ba772a583d13455a77}{\index{Star@{Star}!draw@{draw}}
+\index{draw@{draw}!Star@{Star}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Star\+::draw (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{g, }
+\item[{int}]{b, }
+\item[{double}]{alfa}
+\end{DoxyParamCaption}
+)}}\label{class_star_a5b5a633e1411e3ba772a583d13455a77}
+Draws one star (takes color as parameter -\/ r \mbox{[}red\mbox{]}, g \mbox{[}green\mbox{]}, b \mbox{[}blue\mbox{]}) \hyperlink{class_star}{Star} is created by drawing 10 triangles. The star will have an inner\+Radius and outer\+Radius which belong to the \hyperlink{class_star}{Star} class \hypertarget{class_star_a5e8cf08bf8519faf9c6fe29db77c5b95}{\index{Star@{Star}!draw\+Random\+Stars@{draw\+Random\+Stars}}
+\index{draw\+Random\+Stars@{draw\+Random\+Stars}!Star@{Star}}
+\subsubsection[{draw\+Random\+Stars}]{\setlength{\rightskip}{0pt plus 5cm}void Star\+::draw\+Random\+Stars (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Point2\+D}$<$ double $>$$>$}]{vect, }
+\item[{double}]{alfa}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_star_a5e8cf08bf8519faf9c6fe29db77c5b95}
+Has {\itshape vect} vector as parameter and draws all the points onto the canvas The drawing is done using the Draw\+Circle method in \hyperlink{class_moon}{Moon} \hypertarget{class_star_a5a45a1a26f35e13f54ca52baf64f6970}{\index{Star@{Star}!generate\+Random\+Stars@{generate\+Random\+Stars}}
+\index{generate\+Random\+Stars@{generate\+Random\+Stars}!Star@{Star}}
+\subsubsection[{generate\+Random\+Stars}]{\setlength{\rightskip}{0pt plus 5cm}void Star\+::generate\+Random\+Stars (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Point2\+D}$<$ double $>$$>$ \&}]{vect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_star_a5a45a1a26f35e13f54ca52baf64f6970}
+Separates the drawing canvas in squares of 0.\+1 x 0.\+1 and then creates a \hyperlink{class_point2_d}{Point2\+D} with random coordinates inside that triangle All points are added to the {\itshape vect} vector \hypertarget{class_star_a7589c551056483d088f0c8e2ae56f182}{\index{Star@{Star}!get\+Inner\+Radius@{get\+Inner\+Radius}}
+\index{get\+Inner\+Radius@{get\+Inner\+Radius}!Star@{Star}}
+\subsubsection[{get\+Inner\+Radius}]{\setlength{\rightskip}{0pt plus 5cm}float Star\+::get\+Inner\+Radius (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_star_a7589c551056483d088f0c8e2ae56f182}
+Getter for inner\+Radius private member \hypertarget{class_star_a3270c6370a58a3cd1b3f208772928fd4}{\index{Star@{Star}!get\+Outer\+Radius@{get\+Outer\+Radius}}
+\index{get\+Outer\+Radius@{get\+Outer\+Radius}!Star@{Star}}
+\subsubsection[{get\+Outer\+Radius}]{\setlength{\rightskip}{0pt plus 5cm}float Star\+::get\+Outer\+Radius (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_star_a3270c6370a58a3cd1b3f208772928fd4}
+Getter for outer\+Radius private member 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_star_ad3471c4d5d15b774543031939eda0f5d}{\index{Star@{Star}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Star@{Star}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{in, }
+\item[{{\bf Star} \&}]{star}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_star_ad3471c4d5d15b774543031939eda0f5d}
+Copies bytes from a source memory area to a destination memory area, where both areas may not overlap. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in} & Current stream \\
+\hline
+\mbox{\tt in}  & {\em star} & Object to copy into \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_star_a56595bbf2da9c7b2de04be76f61d2e93}{\index{Star@{Star}!center@{center}}
+\index{center@{center}!Star@{Star}}
+\subsubsection[{center}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point3\+D} Star\+::center}}\label{class_star_a56595bbf2da9c7b2de04be76f61d2e93}
+The center point of the star object 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Star.\+h\item 
+Star.\+cpp\end{DoxyCompactItemize}

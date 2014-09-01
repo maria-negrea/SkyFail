@@ -1,10 +1,16 @@
 /**
-\mainpage Constellation drawing example
+\mainpage Constellation drawing 
 
  * Maria Negrea & Catalin Ionescu
 
- * 1 / 9 / 2014
+ * 29 / 08 / 2014 -> 01/ 09/ 2014
 
+ * This project represents a scene involving the Orion constellation during the timelapse of a night.
+
+ * We are using the Glut Library for accesing drawing methods in OpenGL.
+ 
+ * In order to build this project under Windows, one must use the Visual Studio suite (v.2008 recommended).
+ * To run it under Linux (tested on Ubuntu), we provided a Make file runnable using *make* command.
  * 
  */
 
@@ -31,7 +37,6 @@ double yPos = -1.0;
 double radius = 100;
 double rE=79.0, gE=100.0, bE=60.0;
 double rC=255.0, gC=242.0, bC=151.0;
-
 double rD=70, gD=66, bD=101;
 double alfa=0.0;
 vector<Point2D<double>> vect;
@@ -72,18 +77,15 @@ void initialize()
 * draw earth and constellation
 */
 
-void draw() {
-	 glClear (GL_COLOR_BUFFER_BIT);
-	 glEnable(GL_BLEND);
-	 glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+void draw() 
+{
+	glClear (GL_COLOR_BUFFER_BIT);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glClearColor(rD / 255.0, gD / 255.0, bD / 255.0, 0.0);
-	
-	Earth::draw(rE , gE, bE);
 
 	Moon::drawMoon(xPos, yPos, radius);
-	
-	Earth::draw(rE , gE, bE);
-	
+
 	Constelation cons;
 	if(xPos>0.9 && yPos>0.9)
 	{
@@ -93,14 +95,10 @@ void draw() {
 	{
 		cons.draw(rC, gC, bC, alfa, false);
 	}
-	
-	
-	Earth::draw(rE , gE, bE);
-	
+
 	Star::drawRandomStars(vect, alfa);
-	
-	Earth::draw(rE , gE, bE);
-	Earth::draw(rE , gE, bE);
+
+	Earth::draw(rE , gE, bE);	
 	
 	#ifdef __unix || __unix__
 		usleep(10*1000);
@@ -111,11 +109,11 @@ void draw() {
 	rD-=0.05;
 	gD-=0.05;
 	bD-=0.05;
+
 	if(xPos > 1.3) 
 	{
 		rE=145.0, gE=169.0, bE=99.0;
 		rC=70.0, gC=66.0, bC=101.0;
-
 		rD=70, gD=66, bD=101;
 		alfa=0.0;
 	}

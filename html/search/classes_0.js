@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['constelation',['Constelation',['../classConstelation.html',1,'']]]
+  ['constelation',['Constelation',['../class_constelation.html',1,'']]]
 ];

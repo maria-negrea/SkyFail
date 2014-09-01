@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['earth',['Earth',['../classEarth.html',1,'']]]
+  ['earth',['Earth',['../class_earth.html',1,'']]]
 ];

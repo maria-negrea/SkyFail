@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['constellation_20drawing_20example',['Constellation drawing example',['../index.html',1,'']]]
+  ['constellation_20drawing',['Constellation drawing',['../index.html',1,'']]]
 ];

@@ -1,0 +1,64 @@
+\hypertarget{class_constelation}{\section{Constelation Class Reference}
+\label{class_constelation}\index{Constelation@{Constelation}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_constelation_a67e8f8db581831ce96b9002250547784}{initialize} (char $\ast$file\+Name)
+\item 
+void \hyperlink{class_constelation_ae35262da5bcbf0123eb568f512aa45e8}{draw} (double \&r, double \&g, double \&b, double \&alfa, bool draw\+Lines)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{class_star}{Star} $>$ \hyperlink{class_constelation_a71d208ee2a6b57c32f28044ee7acad55}{stars}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_constelation_ae35262da5bcbf0123eb568f512aa45e8}{\index{Constelation@{Constelation}!draw@{draw}}
+\index{draw@{draw}!Constelation@{Constelation}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Constelation\+::draw (
+\begin{DoxyParamCaption}
+\item[{double \&}]{r, }
+\item[{double \&}]{g, }
+\item[{double \&}]{b, }
+\item[{double \&}]{alfa, }
+\item[{bool}]{draw\+Lines}
+\end{DoxyParamCaption}
+)}}\label{class_constelation_ae35262da5bcbf0123eb568f512aa45e8}
+Constellation draw method It draws in several rounds due to multiple points being connected to more than one point At the end, it draws the stars using the \hyperlink{class_star_a5b5a633e1411e3ba772a583d13455a77}{Star.\+draw} method 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em r} & Red parameter \\
+\hline
+\mbox{\tt in}  & {\em g} & Green parameter \\
+\hline
+\mbox{\tt in}  & {\em b} & Blue parameter \\
+\hline
+\mbox{\tt in}  & {\em alfa} & The alpha parameter (transparency) \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_constelation_a67e8f8db581831ce96b9002250547784}{\index{Constelation@{Constelation}!initialize@{initialize}}
+\index{initialize@{initialize}!Constelation@{Constelation}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Constelation\+::initialize (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file\+Name}
+\end{DoxyParamCaption}
+)}}\label{class_constelation_a67e8f8db581831ce96b9002250547784}
+This function reads the coordinates of the stars from file and adds them to the stars vector 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\+Name} & The name of the file to read star coordinates from \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_constelation_a71d208ee2a6b57c32f28044ee7acad55}{\index{Constelation@{Constelation}!stars@{stars}}
+\index{stars@{stars}!Constelation@{Constelation}}
+\subsubsection[{stars}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Star}$>$ Constelation\+::stars}}\label{class_constelation_a71d208ee2a6b57c32f28044ee7acad55}
+A vector of Stars (containing the coordinates for each star to be drawn representing the Constellation) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Constelation.\+h\item 
+Constelation.\+cpp\end{DoxyCompactItemize}

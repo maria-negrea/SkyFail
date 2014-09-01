@@ -31,22 +31,23 @@ void Star::draw(int r, int g, int b, double alfa)
 	
 	glBegin(GL_TRIANGLE_FAN);
 		
-		glColor4f( r/255.0, g/255.0, b/255.0, alfa*2);
+		glColor4f( r/255.0, g/255.0, b/255.0, alfa*10);
 		glVertex3f(center.x, center.y, 0.0);
 		
 		for (int iVertIndex = 0; iVertIndex < 10; ++iVertIndex) 
 		{
 			float fAngleStart	= PI/2.0 + (iVertIndex*2.0*PI)/10.0;
 			float fAngleEnd		= fAngleStart + PI/5.0;
+
 			if (iVertIndex % 2 == 0) 
 			{
-				glColor4f( r/255.0, g/255.0, b/255.0, alfa*5);
+				glColor4f( r/255.0, g/255.0, b/255.0, alfa*2);
 				glVertex3f(center.x + outerRadius*cos(fAngleStart)/STP, center.y + outerRadius*sin(fAngleStart), 0.0);
 				glVertex3f(center.x + innerRadius*cos(fAngleEnd)/STP, center.y + innerRadius*sin(fAngleEnd), 0.0);
 			} 
 			else 
 			{
-				glColor4f( r/255.0, g/255.0, b/255.0, alfa*5);
+				glColor4f( r/255.0, g/255.0, b/255.0, alfa*2);
 				glVertex3f(center.x + innerRadius*cos(fAngleStart)/STP, center.y + innerRadius*sin(fAngleStart), 0.0);
 				glVertex3f(center.x + outerRadius*cos(fAngleEnd)/STP, center.y + outerRadius*sin(fAngleEnd), 0.0);
 			}
@@ -76,22 +77,28 @@ istream& operator>>(istream& in, Star& star)
 * with random coordinates inside that triangle
 * All points are added to the *vect* vector
 */
-void Star::generateRandomStars(vector<Point2D<double>> &vect) {
+void Star::generateRandomStars(vector<Point2D<double>> &vect) 
+{
 	srand(time(0));
 	double x, y;
     double rand1, rand2;
-    int step = 20; 
-	for(double i = -100.0; i <= 100.0; i+= step) {
-		for(double j = -100.0; j <= 100.0; j+= step) {
+    int step = 20;
+
+	for(double i = -100.0; i <= 100.0; i+= step) 
+	{
+		for(double j = -100.0; j <= 100.0; j+= step) 
+		{
 			rand1 = rand() % step + 1;
             rand2 = rand() % step + 1;
             x = i + rand1;
             y = j + rand2;
             x /= 10.0;
             y /= 10.0;
-            if(x < (-10) || x > 10 || y < (-10) || y > 10) {
+            if(x < (-10) || x > 10 || y < (-10) || y > 10) 
+			{
 				continue;
 			}
+
 			Point2D<double> temp(x/10, y/10);
 			vect.push_back(temp);
 		}
@@ -102,9 +109,11 @@ void Star::generateRandomStars(vector<Point2D<double>> &vect) {
 * Has *vect* vector as parameter and draws all the points onto the canvas
 * The drawing is done using the DrawCircle method in Moon
 */
-void Star::drawRandomStars(vector<Point2D<double>> vect, double alfa) {
+void Star::drawRandomStars(vector<Point2D<double>> vect, double alfa) 
+{
 	glColor3f(255/255.0, 255/255.0, 255/255.0);
-	for(int i=0; i < vect.size(); ++i) {
+	for(int i=0; i < vect.size(); ++i) 
+	{
 		Moon::DrawCircle(rand() % 4 + 1, vect[i].getX(), vect[i].getY(), alfa*10);
 	}
 }

@@ -3,6 +3,7 @@
 
 /*!
 *
+	* This function reads the coordinates of the stars from file and adds them to the stars vector
 	* @param[in] fileName The name of the file to read star coordinates from
 */
 void Constelation::initialize(char* fileName)
@@ -36,8 +37,8 @@ void Constelation::draw(double& r, double& g, double& b, double& alfa, bool draw
 	glPushMatrix();
 	if(drawLines)
 	{
-		/*glColor4f(81/255.0, 77/255.0, 80/255.0, 0.02);*/
-		glColor4f(r/255.0, g/255.0, b/255.0, 0.2);
+		glColor4f(r/255.0, g/255.0, b/255.0, 0.3);
+
 		glBegin(GL_LINE_STRIP);
 			for(int i=0;i<8;i++)
 			{			
@@ -75,7 +76,7 @@ void Constelation::draw(double& r, double& g, double& b, double& alfa, bool draw
 		stars[i].draw(r, g, b, alfa);
 	}
 	glPopMatrix();
-	glFlush();
+
 	r+=0.5;
 	g+=0.5;
 	b+=0.5;
