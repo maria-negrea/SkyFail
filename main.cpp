@@ -97,7 +97,7 @@ void draw() {
 	
 	Earth::draw(rE , gE, bE);
 	
-	Star::drawRandomStars(vect);
+	Star::drawRandomStars(vect, alfa);
 	
 	Earth::draw(rE , gE, bE);
 	Earth::draw(rE , gE, bE);

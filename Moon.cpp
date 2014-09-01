@@ -18,7 +18,7 @@ void Moon::DrawCircle(double r,double cx,double cy, double alpha)
     double const PI = 3.14159;
     double w = 600.0, h = 400.0;
     glBegin(GL_POLYGON);
-        glColor4f( 208/255.0 , 193/255.0, 149/255.0, alpha);
+        glColor4f( 241/255.0 , 215/255.0, 166/255.0, alpha);
         glVertex3f(cx,cy,0.0);
         for(double t = 0; t<PI*2;t+=0.2)
         {   
