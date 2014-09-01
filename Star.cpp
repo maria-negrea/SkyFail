@@ -73,11 +73,19 @@ istream& operator>>(istream& in, Star& star)
 void Star::generateRandomStars(vector<Point2D<double>> &vect) {
 	srand(time(0));
 	double x, y;
-	for(double i = -1.0; i <= 1.0; i+= 0.1) {
-		for(double j = -1.0; j <= 1.0; j+= 0.1) {
-			x = i*10 + (rand() % (int)((i+0.1)*10 - i*10 + 10.0));
-			y = j*10 + (rand() % (int)((j+0.1)*10 - j*10 + 10.0));
-			if(x < (-10) || x > 10 || y < (-10) || y > 10) {
+    double rand1, rand2;
+    int step = 20; 
+	for(double i = -100.0; i <= 100.0; i+= step) {
+		for(double j = -100.0; j <= 100.0; j+= step) {
+			// x = i*10 + (rand() % (int)((i+0.1)*10 - i*10 + 10.0));
+			// y = j*10 + (rand() % (int)((j+0.1)*10 - j*10 + 10.0));
+			rand1 = rand() % step + 1;
+            rand2 = rand() % step + 1;
+            x = i + rand1;
+            y = j + rand2;
+            x /= 10.0;
+            y /= 10.0;
+            if(x < (-10) || x > 10 || y < (-10) || y > 10) {
 				continue;
 			}
 			Point2D<double> temp(x/10, y/10);
