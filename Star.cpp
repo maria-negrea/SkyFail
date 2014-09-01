@@ -4,8 +4,8 @@
 
 Star::Star()
 {
-	outerRadius=0.02;
-	innerRadius=0.01;
+	outerRadius=0.04;
+	innerRadius=0.02;
 }
 
 float Star:: getOuterRadius()
@@ -31,8 +31,8 @@ void Star::draw(int r, int g, int b, double alfa)
 	
 	glBegin(GL_TRIANGLE_FAN);
 		
-		glColor4f( r/255.0, g/255.0, b/255.0, alfa);
-		glVertex3f(center.x, center.y, 0.0);
+		glColor4f( r/255.0, g/255.0, b/255.0, 0.5);
+		glVertex3f(center.x, center.y, alfa);
 		
 		for (int iVertIndex = 0; iVertIndex < 10; ++iVertIndex) 
 		{
@@ -40,13 +40,13 @@ void Star::draw(int r, int g, int b, double alfa)
 			float fAngleEnd		= fAngleStart + PI/5.0;
 			if (iVertIndex % 2 == 0) 
 			{
-				glColor4f( r/255.0, g/255.0, b/255.0, alfa/2);
+				glColor4f( r/255.0, g/255.0, b/255.0, alfa);
 				glVertex3f(center.x + outerRadius*cos(fAngleStart)/STP, center.y + outerRadius*sin(fAngleStart), 0.0);
 				glVertex3f(center.x + innerRadius*cos(fAngleEnd)/STP, center.y + innerRadius*sin(fAngleEnd), 0.0);
 			} 
 			else 
 			{
-				glColor4f( r/255.0, g/255.0, b/255.0, alfa/2);
+				glColor4f( r/255.0, g/255.0, b/255.0, alfa);
 				glVertex3f(center.x + innerRadius*cos(fAngleStart)/STP, center.y + innerRadius*sin(fAngleStart), 0.0);
 				glVertex3f(center.x + outerRadius*cos(fAngleEnd)/STP, center.y + outerRadius*sin(fAngleEnd), 0.0);
 			}

@@ -19,5 +19,5 @@ public:
     */
 	vector<Star> stars;
 	void initialize(char* fileName);
-	void draw(double& r, double& g, double& b, double& alfa);
+	void draw(double& r, double& g, double& b, double& alfa, bool drawLines);
 };
