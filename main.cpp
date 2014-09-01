@@ -6,7 +6,13 @@
 #include <cstdlib>
 #include <ctime>
 #include <vector>
-#include <unistd.h>
+#include <stdio.h>
+
+#ifdef __unix || __unix__
+ #include <unistd.h>
+#else
+	#include <windows.h>
+#endif
 
 using namespace std;
 
@@ -72,7 +78,12 @@ void draw() {
 	
 	Star::drawRandomStars(vect);
 	Earth::draw(rE , gE, bE);
-	usleep(10*1000);
+	#ifdef __unix || __unix__
+		usleep(10*1000);
+	#else
+		Sleep(10);
+	#endif
+	
 	glFlush();
 	glutPostRedisplay();
 }
