@@ -1,6 +1,10 @@
 #include<fstream>
 #include "Constelation.h"
 
+/*!
+*
+	* @param[in] fileName The name of the file to read star coordinates from
+*/
 void Constelation::initialize(char* fileName)
 {
 	ifstream file(fileName);
@@ -15,6 +19,15 @@ void Constelation::initialize(char* fileName)
 
 }
 
+/*!
+*	Constellation draw method
+* It draws in several rounds due to multiple points being connected to more than one point
+* At the end, it draws the stars using the Star.draw method
+* @param[in] r Red parameter
+* @param[in] g Green parameter
+* @param[in] b Blue parameter
+* @param[in] alfa The alpha parameter (transparency)
+*/
 void Constelation::draw(double& r, double& g, double& b, double& alfa)
 {
 	initialize("StarsCoordinates.txt");
@@ -59,9 +72,9 @@ void Constelation::draw(double& r, double& g, double& b, double& alfa)
 	}
 	glPopMatrix();
 	glFlush();
-	r+=10;
-	g+=10;
-	b+=10;
+	r+=0.1;
+	g+=0.1;
+	b+=0.1;
 
 	if(alfa< 1.0)
 	{

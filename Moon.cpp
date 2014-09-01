@@ -5,7 +5,7 @@
 
 using namespace std;
 
-/*
+/*!
 * Draws one circle with radius *r*, center point having coordinates *cx*, *cy*
 * and the alpha for points
 
@@ -18,7 +18,7 @@ void Moon::DrawCircle(double r,double cx,double cy, double alpha)
     double const PI = 3.14159;
     double w = 600.0, h = 400.0;
     glBegin(GL_POLYGON);
-        glColor4f( 255/255.0 , 242/255.0, 151/255.0, alpha);
+        glColor4f( 255/255.0 , 242/255.0, 151/255.0, alpha/2);
         glVertex3f(cx,cy,0.0);
         for(double t = 0; t<PI*2;t+=0.2)
         {   
@@ -29,6 +29,9 @@ void Moon::DrawCircle(double r,double cx,double cy, double alpha)
     glEnd();
 }
 
+/*!
+* Helper function, determines if *x* is in the interval determined by *min* and *max*
+*/
 inline int in(int x, int min, int max) 
 {
     if(x > min && x < max) 
@@ -38,8 +41,8 @@ inline int in(int x, int min, int max)
     return false;
 }
 
-/*
-* Draws the moon using circles with the same center
+/*!
+* Draws the moon using circles with the same center but different transparency parameters and radius
 */
 void Moon::drawMoon(double &xPos, double &yPos, double &radius) 
 {
@@ -63,7 +66,7 @@ void Moon::drawMoon(double &xPos, double &yPos, double &radius)
                 DrawCircle(radius * (i / 10.0), xPos, yPos, 0.1);
             }
         }
-        Moon::DrawCircle(radius * 0.6, xPos, yPos, 0.6);
+        Moon::DrawCircle(radius * 0.6, xPos, yPos, 0.2);
     glPopMatrix();
 
     // Animate 
@@ -75,5 +78,6 @@ void Moon::drawMoon(double &xPos, double &yPos, double &radius)
         radius = 100.0;
     }
 
-      yPos = -0.22 * xPos * xPos + 1.2 * xPos;
+    yPos = -0.22 * xPos * xPos + 1.2 * xPos;
+    // glFlush();
 }
