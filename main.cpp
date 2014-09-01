@@ -58,7 +58,9 @@ void draw() {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
+	Earth::draw();
 	Moon::drawMoon(xPos, yPos, radius);
+	Earth::draw();
 	
 	Constelation cons;
 	cons.draw();
@@ -67,7 +69,9 @@ void draw() {
 	
 	Star::drawRandomStars(vect);
 
-	usleep(2*1000);
+	Earth::draw();
+
+	usleep(10*1000);
 	glFlush();
 	glutPostRedisplay();
 }

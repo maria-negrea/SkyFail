@@ -74,8 +74,8 @@ istream& operator>>(istream& in, Star& star)
 void Star::generateRandomStars(vector<Point2D<double>> &vect) {
 	srand(time(0));
 	double x, y;
-	for(double i = -1.0; i < 1.0; i+= 0.1) {
-		for(double j = -0.2; j < 1.0; j+= 0.1) {
+	for(double i = -1.0; i <= 1.0; i+= 0.1) {
+		for(double j = -1.0; j <= 1.0; j+= 0.1) {
 			x = i*10 + (rand() % (int)((i+0.1)*10 - i*10 + 10.0));
 			y = j*10 + (rand() % (int)((j+0.1)*10 - j*10 + 10.0));
 			if(x < (-10) || x > 10 || y < (-10) || y > 10) {
@@ -88,7 +88,7 @@ void Star::generateRandomStars(vector<Point2D<double>> &vect) {
 }
 
 /*
-* Takes *vect* vector as parameter and draws all the points onto the canvas
+* Has *vect* vector as parameter and draws all the points onto the canvas
 * The drawing is done using the DrawCircle method in Moon
 */
 void Star::drawRandomStars(vector<Point2D<double>> vect) {
