@@ -1,6 +1,15 @@
 \hypertarget{classConstelation}{\section{Constelation Class Reference}
 \label{classConstelation}\index{Constelation@{Constelation}}
 }
+
+
+Constellation class Reads set of points from input file, adds them to a vector of points and then draws the constellation onto the canvas.  
+
+
+
+
+{\ttfamily \#include $<$Constelation.\-h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -13,6 +22,11 @@ void \hyperlink{classConstelation_ae35262da5bcbf0123eb568f512aa45e8}{draw} (doub
 \item 
 vector$<$ \hyperlink{classStar}{Star} $>$ \hyperlink{classConstelation_a71d208ee2a6b57c32f28044ee7acad55}{stars}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Constellation class Reads set of points from input file, adds them to a vector of points and then draws the constellation onto the canvas. 
+
 
 
 \subsection{Member Function Documentation}
@@ -29,13 +43,15 @@ vector$<$ \hyperlink{classStar}{Star} $>$ \hyperlink{classConstelation_a71d208ee
 )}}\label{classConstelation_ae35262da5bcbf0123eb568f512aa45e8}
 Constellation draw method It draws in several rounds due to multiple points being connected to more than one point At the end, it draws the stars using the \hyperlink{classStar_a5b5a633e1411e3ba772a583d13455a77}{Star.\-draw} method 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em r} & Red parameter \\
+\mbox{\tt in}  & {\em r} & Double -- Red parameter \\
 \hline
-\mbox{\tt in}  & {\em g} & Green parameter \\
+\mbox{\tt in}  & {\em g} & Double -- Green parameter \\
 \hline
-\mbox{\tt in}  & {\em b} & Blue parameter \\
+\mbox{\tt in}  & {\em b} & Double -- Blue parameter \\
 \hline
-\mbox{\tt in}  & {\em alfa} & The alpha parameter (transparency) \\
+\mbox{\tt in}  & {\em alfa} & Double -- The alpha parameter (transparency) \\
+\hline
+\mbox{\tt in}  & {\em draw\-Lines} & Bool -- becomes true when the moon reached the position where we should draw the lines for constellation \\
 \hline
 \end{DoxyParams}
 \hypertarget{classConstelation_a67e8f8db581831ce96b9002250547784}{\index{Constelation@{Constelation}!initialize@{initialize}}
@@ -45,7 +61,7 @@ Constellation draw method It draws in several rounds due to multiple points bein
 \item[{char $\ast$}]{file\-Name}
 \end{DoxyParamCaption}
 )}}\label{classConstelation_a67e8f8db581831ce96b9002250547784}
-
+This function reads the coordinates of the stars from file and adds them to the stars vector 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em file\-Name} & The name of the file to read star coordinates from \\
 \hline

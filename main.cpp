@@ -5,13 +5,15 @@
 
  * 29 / 08 / 2014 -> 01/ 09/ 2014
 
- * This project represents a scene involving the Orion constellation during the timelapse of a night.
+ * This project represents a scene involving the Orion constellation during the time lapse of a night.
 
- * We are using the Glut Library for accesing drawing methods in OpenGL.
+ * We are using the Glut Library for using drawing methods in OpenGL.
  
- * In order to build this project under Windows, one must use the Visual Studio suite (v.2008 recommended).
- * To run it under Linux (tested on Ubuntu), we provided a Make file runnable using *make* command.
- * 
+ * In order to build this project under Windows, one must use the Visual Studio suite (v. 2008 recommended).
+
+ * To run it under Linux (tested on Ubuntu ), we provided a Make file runnable using *make* command.
+ 
+ *  
  */
 
 #include "Constelation.h"

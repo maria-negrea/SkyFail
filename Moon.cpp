@@ -11,7 +11,10 @@ using namespace std;
 
 * The circle is drawn using a number of polygons, all having one points in the center (cx, cy)
 
-
+* @param[in] r Double -- Radius
+* @param[in] cx Double -- OX coordinate for center point
+* @param[in] cy Double -- OY coordinate for center point
+* @param[in] alfa Double -- The alpha parameter (transparency)
 */
 void Moon::DrawCircle(double r,double cx,double cy, double alpha)
 {
@@ -43,6 +46,10 @@ inline int in(int x, int min, int max)
 
 /*!
 * Draws the moon using circles with the same center but different transparency parameters and radius
+
+* @param[in] xPos Double -- OX parameter for center
+* @param[in] yPos Double -- OY parameter for center
+* @param[in] radius Double -- Radius
 */
 void Moon::drawMoon(double &xPos, double &yPos, double &radius) 
 {

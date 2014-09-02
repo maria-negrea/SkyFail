@@ -9,7 +9,11 @@
 
 
 using namespace std;
-
+/*! \brief Constellation class
+ * Reads set of points from input file, adds them to a vector of points
+ * and then draws the constellation onto the canvas
+ *
+ */
 class Constelation
 {
 	

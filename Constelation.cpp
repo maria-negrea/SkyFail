@@ -1,4 +1,4 @@
-#include<fstream>
+#include <fstream>
 #include "Constelation.h"
 
 /*!
@@ -24,10 +24,11 @@ void Constelation::initialize(char* fileName)
 *	Constellation draw method
 * It draws in several rounds due to multiple points being connected to more than one point
 * At the end, it draws the stars using the Star.draw method
-* @param[in] r Red parameter
-* @param[in] g Green parameter
-* @param[in] b Blue parameter
-* @param[in] alfa The alpha parameter (transparency)
+* @param[in] r Double -- Red parameter
+* @param[in] g Double -- Green parameter
+* @param[in] b Double -- Blue parameter
+* @param[in] alfa Double -- The alpha parameter (transparency)
+* @param[in] drawLines Bool -- becomes true when the moon reached the position where we should draw the lines for constellation
 */
 void Constelation::draw(double& r, double& g, double& b, double& alfa, bool drawLines)
 {

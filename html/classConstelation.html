@@ -24,6 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Constellation
    </div>
+   <div id="projectbrief">A project drawing an animated scene using OpenGL&#39;s glut library</div>
   </td>
  </tr>
  </tbody>
@@ -89,6 +90,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Constelation Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Constellation class Reads set of points from input file, adds them to a vector of points and then draws the constellation onto the canvas.  
+ <a href="classConstelation.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Constelation_8h_source.html">Constelation.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -102,7 +108,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a71d208ee2a6b57c32f28044ee7acad55"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classStar.html">Star</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConstelation.html#a71d208ee2a6b57c32f28044ee7acad55">stars</a></td></tr>
 <tr class="separator:a71d208ee2a6b57c32f28044ee7acad55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Constellation class Reads set of points from input file, adds them to a vector of points and then draws the constellation onto the canvas. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="ae35262da5bcbf0123eb568f512aa45e8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -147,10 +155,11 @@ Public Attributes</h2></td></tr>
 <p>Constellation draw method It draws in several rounds due to multiple points being connected to more than one point At the end, it draws the stars using the <a class="el" href="classStar.html#a5b5a633e1411e3ba772a583d13455a77">Star.draw</a> method </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>Red parameter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>Green parameter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Blue parameter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">alfa</td><td>The alpha parameter (transparency) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>Double &ndash; Red parameter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>Double &ndash; Green parameter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Double &ndash; Blue parameter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">alfa</td><td>Double &ndash; The alpha parameter (transparency) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">drawLines</td><td>Bool &ndash; becomes true when the moon reached the position where we should draw the lines for constellation </td></tr>
   </table>
   </dd>
 </dl>
@@ -170,6 +179,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This function reads the coordinates of the stars from file and adds them to the stars vector </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fileName</td><td>The name of the file to read star coordinates from </td></tr>
@@ -200,7 +210,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 1 2014 14:23:53 for Constellation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 2 2014 09:19:09 for Constellation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
